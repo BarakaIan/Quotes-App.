@@ -3,7 +3,7 @@ Ian Baraka.
 ## Description.
 A web page that displays  quotes and their authors. 
 ### Link to live page
-https://github.com/BarakaIan/Quotes-App..git
+ https://barakaian.github.io/Quotes-App./.
 
 #### Setup/Installation Requirements.
 
