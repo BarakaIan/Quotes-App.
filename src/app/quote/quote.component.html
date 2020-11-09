@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-4">
+        
+        <div *ngFor='let quote of quotes; let i = index'>
+            <!-- <h1>{{ quote.title }}</h1> -->
+            <br>
+            <br>
+            <br>
+            <p>{{ quote.name }}</p>
+            <a class="btn btn-sm btn-block btn-success"(click)='toggleDetails(i)'>Show more inspirational Quotes</a>
+            <button (onclick)="downvote" class="btn">
+                <i class="fa fa-thumbs-down" style="color: black;"></i>{{ contactDownvote }}</button>
+            <button (onclick)="upvote" class="btn">
+                <i class="fa fa-thumbs-up" style="color: yellowgreen;"></i>{{ contactUpvote }}
+            
+            </button>
+            <div *ngIf='quote.showDescription'>
+            <app-toggle [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-toggle>
+            </div>
+            <button (onclick)="delete" class="btn-danger">{{ contactDelete }}</button>
+
+        </div>
+    </div>
+    <div class="col-md-4">
+        <app-contact (addQuote)="addNewQuote($event)"></app-contact>
+    </div>
+    <div *ngIf="quotes.length < 1" class="alert alert-warning">
+        No Quotes in Archive
+    </div>
+      
+</div>
